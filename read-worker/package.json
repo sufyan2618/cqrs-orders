@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "drizzle-orm": "^0.45.2",
+    "pg": "^8.21.0",
+    "uuid": "^14.0.0"
+  },
+  "name": "read-worker",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": " bun --watch --env=.env index.ts",
+    "start": "bun index.ts",
+    "migrate": "npx drizzle-kit migrate",
+    "generate": "npx drizzle-kit generate"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

@@ -33,6 +33,7 @@ app.post("/orders", async (c) => {
             type: "OrderCreated",
             data: {
                 orderId,
+                eventId: uuidv4(),
                 userId: user_id,
                 items
             }
@@ -51,11 +52,12 @@ app.patch("/orders/:id/status", async (c) => {
     const { newStatus } = await c.req.json();
 
     try {
-        await db.update(orders).set({ status: newStatus }).where(orders.id.eq(orderId));
+        await db.update(orders).set({ status: newStatus }).where(eq(orders.id, orderId));
         const event: OrderStatusUpdatedEvent = {
             type: "OrderStatusUpdated",
             data: {
                 orderId,
+                eventId: uuidv4(),
                 newStatus
             }
         };

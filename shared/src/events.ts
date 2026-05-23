@@ -2,6 +2,7 @@ export interface OrderCreatedEvent {
   type: "OrderCreated";
   data: {
     orderId: string;
+    eventId: string;
     userId: number;
     items: {
       productName: string;
@@ -15,6 +16,7 @@ export interface OrderStatusUpdatedEvent {
   type: "OrderStatusUpdated";
   data: {
     orderId: string;
+    eventId: string;
     newStatus: string;
   };
 }
