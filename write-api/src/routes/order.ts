@@ -69,3 +69,6 @@ app.patch("/orders/:id/status", async (c) => {
         return c.json({ error: "Failed to update order status" }, 500);
     }
 });
+
+const appRoutes = app
+export default appRoutes;

@@ -16,4 +16,3 @@ export const processedEvents = pgTable("processed_events", {
   eventId:     text("event_id").primaryKey(),
   processedAt: timestamp("processed_at").defaultNow(),
 });
-

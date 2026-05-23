@@ -1,8 +1,8 @@
 import { createChannel, QUEUE_NAME } from "../shared/src/rabbit";
-import { db } from "./src/lib/db";
-import { processedEvents } from "./src/db/schema";
+import { db } from "../shared/read-model/src/lib/db";
+import { processedEvents } from "../shared/read-model/src/db/schema";
 import { projectOrderCreated, projectOrderStatusUpdated } from "./src/projectors/order";
-import { eq } from "drizzle-orm";
+import { eq } from "../shared/read-model/src/lib/drizzle";
 import type { OrderEvent } from "../shared/src/events";
 
 

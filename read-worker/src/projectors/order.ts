@@ -1,7 +1,7 @@
 import type{ OrderCreatedEvent, OrderStatusUpdatedEvent } from "../../../shared/src/events";
-import { ordersView } from "../db/schema";
-import { db } from "../lib/db";
-import { eq } from "drizzle-orm";
+import { ordersView } from "../../../shared/read-model/src/db/schema";
+import { db } from "../../../shared/read-model/src/lib/db";
+import { eq } from "../../../shared/read-model/src/lib/drizzle";
 
 
 export async function projectOrderCreated(event: OrderCreatedEvent) {
