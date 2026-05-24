@@ -9,7 +9,7 @@ import { eq } from "drizzle-orm";
 const app = new Hono();
 const rabbitChannel= await createChannel(process.env.RABBITMQ_URL!);
 
-app.post("/orders", async (c) => {
+app.post("/", async (c) => {
     const { user_id, items } = await c.req.json();
     const orderId = uuidv4();
 

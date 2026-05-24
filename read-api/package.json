@@ -3,6 +3,10 @@
   "module": "index.ts",
   "type": "module",
   "private": true,
+  "scripts": {
+    "dev": " bun --watch --env=.env index.ts",
+    "start": "bun index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
@@ -10,6 +14,7 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "drizzle-orm": "^0.45.2",
     "hono": "^4.12.22",
     "pg": "^8.21.0"
